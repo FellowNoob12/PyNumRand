@@ -11,7 +11,7 @@ welcomeMessage = """
 print(welcomeMessage)
     
 while True:
-    amount = int(input("How large is the number do you want? \n"))
+    amount = int(input("\nHow large is the number do you want? \n"))
     answer = int(input("What is the number the computer randomly picked? \n"))
     num = random.randint(0, amount)
     
@@ -20,6 +20,4 @@ while True:
         continue
     else:
         print("You got it wrong.")
-        ask = input("Do you want to exit? \n")
-        if ask is "True":
-            pass
+        continue
