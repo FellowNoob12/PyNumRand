@@ -6,27 +6,33 @@ welcomeMessage = """
 |  Welcome to the Number Guesser!  |
 |                                  |
 ------------------------------------
+Do q or quit to quit.
 """
 
 print(welcomeMessage)
 
 def Function():
-    amount = int(input("\nHow large is the number do you want? \n"))
-    global answer
-    answer = int(input("What is the number the computer randomly picked? \n"))
-    global num
-    num = random.randint(0, amount)
+    try:
+       amount = int(input("\nHow large is the number do you want? \n"))
+       global answer
+       answer = int(input("What is the number the computer randomly picked? \n"))
+       global num
+       num = random.randint(0, amount)
+    except:
+        answer = str()
+        num = str()
     
 Function()
 
-if answer == num:
+try:
+   if answer == num:
     print("You got the correct answer!")
     Function()
-else:
+   else:
     print("You got it wrong.")
     ans = input("\nDo you want to continue? \n")
-    if ans == "No":
-        pass
-    else:
-        Function()
+    
+except:      
+   if answer or num == "q" or "quit":
+    quit()
         
